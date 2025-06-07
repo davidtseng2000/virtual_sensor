@@ -17,22 +17,29 @@ VM with Ubuntu 24.04.2 LTS (Ubuntu Server)
 
 (make clean)
 
-編譯：
-`make`
+* 編譯：
 
-載入模組：
-`sudo insmod virtual_sensor.ko`
+    `make`
 
-查看 kernel log，確認有成功載入：
-`dmesg | tail -n 20`
+* 載入模組：
 
-檢查 /proc 和 /sys 中的檔案：
-`cat /proc/virtual_temp_sensor`
-`cat /sys/kernel/virtual_sensor/temp`
-→註：每過五秒應該會看到一次溫度值更新。
+    `sudo insmod virtual_sensor.ko`
 
-卸載模組：
-`sudo rmmod virtual_sensor`
+* 查看 kernel log，確認有成功載入：
+
+    `dmesg | tail -n 20`
+
+* 檢查 /proc 和 /sys 中的檔案：
+
+    `cat /proc/virtual_temp_sensor`
+
+    `cat /sys/kernel/virtual_sensor/temp`
+
+    →註：每過五秒應該會看到一次溫度值更新。
+
+* 卸載模組：
+
+    `sudo rmmod virtual_sensor`
 
 ## 重點程式碼解釋
 
